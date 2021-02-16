@@ -1,5 +1,6 @@
 import React from "react";
 import Accordion from "./components/Accordion";
+import Footer from "./components/Footer";
 
 const items = [
   {
@@ -19,6 +20,7 @@ const App = () => {
   return (
     <div>
       <Accordion items={items} />
+      <Footer />;
     </div>
   );
 };
