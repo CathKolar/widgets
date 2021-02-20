@@ -20,7 +20,7 @@ const App = () => {
   return (
     <div>
       <Accordion items={items} />
-      <Footer />;
+      <Footer />
     </div>
   );
 };
