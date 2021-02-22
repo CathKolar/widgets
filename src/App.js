@@ -1,7 +1,9 @@
 import React from "react";
-import Accordion from "./components/Accordion";
+// import Accordion from "./components/Accordion";
 import Footer from "./components/Footer";
+import Search from "./components/Search";
 
+// eslint-disable-next-line no-unused-vars
 const items = [
   {
     title: "What is React?",
@@ -19,7 +21,8 @@ const items = [
 const App = () => {
   return (
     <div>
-      <Accordion items={items} />
+      {/* <Accordion items={items} /> */}
+      <Search />
       <Footer />
     </div>
   );
