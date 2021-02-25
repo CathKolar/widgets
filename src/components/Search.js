@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+const createDOMPurify = require("dompurify");
+const { JSDOM } = require("jsdom");
+const window = new JSDOM("").window;
+const DOMPurify = createDOMPurify(window);
+
 const Search = () => {
   const [term, setTerm] = useState("programming");
   const [results, setResults] = useState([]);
@@ -27,7 +32,11 @@ const Search = () => {
       <div key={result.pageid} className="item">
         <div className="content">
           <div className="header">{result.title}</div>
-          <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(result.snippet),
+            }}
+          ></span>
         </div>
       </div>
     );
