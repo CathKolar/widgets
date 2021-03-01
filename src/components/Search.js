@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+// variables used to un-danger-ify dangerouslySetInnerHTML
 const createDOMPurify = require("dompurify");
 const { JSDOM } = require("jsdom");
 const window = new JSDOM("").window;
@@ -8,8 +9,20 @@ const DOMPurify = createDOMPurify(window);
 
 const Search = () => {
   const [term, setTerm] = useState("programming");
+  const [debouncedTerm, setDebouncedTerm] = useState(term);
   const [results, setResults] = useState([]);
 
+  // throttles api requests, runs whenever term changes
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setDebouncedTerm(term);
+    }, 1000);
+
+    //resets timer when new character entered
+    return () => clearTimeout(timerId);
+  }, [term]);
+
+  // runs on initial render & after timer above runs out
   useEffect(() => {
     const search = async () => {
       const { data } = await axios.get("https://en.wikipedia.org/w/api.php", {
@@ -18,27 +31,16 @@ const Search = () => {
           list: "search",
           origin: "*",
           format: "json",
-          srsearch: term,
+          srsearch: debouncedTerm,
         },
       });
 
       setResults(data.query.search);
     };
-
-    if (term && !results.length) {
+    if (debouncedTerm) {
       search();
-    } else {
-      const timeoutID = setTimeout(() => {
-        if (term) {
-          search();
-        }
-      }, 500);
-
-      return () => {
-        clearTimeout(timeoutID);
-      };
     }
-  }, [results.length, term]);
+  }, [debouncedTerm]);
 
   const renderedResults = results.map((result) => {
     return (
