@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./Search.css";
 
 // variables used to un-danger-ify dangerouslySetInnerHTML
 const createDOMPurify = require("dompurify");
@@ -66,7 +67,7 @@ const Search = () => {
   });
 
   return (
-    <div>
+    <div className="Search">
       <div className="ui form">
         <div className="field">
           <label>Enter Search Term</label>
@@ -77,7 +78,7 @@ const Search = () => {
           ></input>
         </div>
       </div>
-      <div className="ui celled list">{renderedResults}</div>
+      <div className="ui divided list">{renderedResults}</div>
     </div>
   );
 };
