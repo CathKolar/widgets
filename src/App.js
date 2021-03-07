@@ -1,7 +1,9 @@
 import React from "react";
 // import Accordion from "./components/Accordion";
 import Footer from "./components/Footer";
+// eslint-disable-next-line no-unused-vars
 import Search from "./components/Search";
+import Dropdown from "./components/Dropdown";
 
 // eslint-disable-next-line no-unused-vars
 const items = [
@@ -22,7 +24,8 @@ const App = () => {
   return (
     <div>
       {/* <Accordion items={items} /> */}
-      <Search />
+      {/*<Search /> */}
+      <Dropdown />
       <Footer />
     </div>
   );
