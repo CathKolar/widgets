@@ -6,11 +6,21 @@ export default function Footer() {
     <div className="Footer">
       <hr />
       <small>
-        <a href="https://github.com/CathKolar/widgets" target="blank">
+        <a
+          href="https://github.com/CathKolar/widgets"
+          target="_blank"
+          rel="noreferrer"
+          title="GitHub"
+        >
           <span className="link"> Open-source code </span>
         </a>
         by
-        <a href="https://www.linkedin.com/in/catherinekolar/" target="blank">
+        <a
+          href="https://www.catherinekolar.dev"
+          target="_blank"
+          rel="noreferrer"
+          title="Catherine Kolar "
+        >
           <span className="link"> Catherine Kolar </span>
         </a>
       </small>
