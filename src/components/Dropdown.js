@@ -18,7 +18,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
     }
     return (
       <div
-        key={options.value}
+        key={option.value}
         className="item"
         onClick={() => onSelectedChange(option)}
       >
