@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 // import Accordion from "./components/Accordion";
+// eslint-disable-next-line no-unused-vars
 import Footer from "./components/Footer";
 // eslint-disable-next-line no-unused-vars
 import Search from "./components/Search";
+// eslint-disable-next-line no-unused-vars
 import Dropdown from "./components/Dropdown";
 import Translate from "./components/Translate";
 
@@ -27,6 +29,7 @@ const options = [
   { label: "A Shade of Blue", value: "blue" },
 ];
 const App = () => {
+  // eslint-disable-next-line no-unused-vars
   const [selected, setSelected] = useState(options[0]);
 
   return (
