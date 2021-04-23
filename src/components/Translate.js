@@ -5,9 +5,10 @@ import Dropdown from "./Dropdown";
 // API KEY AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM
 // only works on localhost:3000
 const options = [
-  { label: "Afrikaans", value: "af" },
-  { label: "Arabic", value: "ar" },
-  { label: "Hindi", value: "hi" },
+  { label: "Finnish", value: "fi" },
+  { label: "French", value: "fr" },
+  { label: "Slovenian", value: "sl" },
+  { label: "Spanish", value: "es" },
 ];
 
 export default function Translate() {
