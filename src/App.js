@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Accordion from "./components/Accordion";
-// eslint-disable-next-line no-unused-vars
 import Footer from "./components/Footer";
 import Search from "./components/Search";
 import Dropdown from "./components/Dropdown";
@@ -50,6 +49,7 @@ const App = () => {
       <Route path="/translate">
         <Translate />
       </Route>
+      <Footer />
     </div>
   );
 };
