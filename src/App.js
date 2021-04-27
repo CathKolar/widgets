@@ -44,6 +44,7 @@ const App = () => {
           options={options}
           selected={selected}
           onSelectedChange={setSelected}
+          otherText="What color am I?"
         />
       </Route>
       <Route path="/translate">

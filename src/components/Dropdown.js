@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const Dropdown = ({ options, selected, onSelectedChange, label }) => {
+const Dropdown = ({
+  options,
+  selected,
+  onSelectedChange,
+  label,
+  otherText,
+}) => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
   useEffect(() => {
@@ -51,6 +57,7 @@ const Dropdown = ({ options, selected, onSelectedChange, label }) => {
           </div>
         </div>
       </div>
+      <h1 style={{ color: selected.value }}>{otherText}</h1>
     </div>
   );
 };
